@@ -28,6 +28,7 @@ export default {
       }
       state.qty++;
       state.total += productData.price;
+      state.total = +state.total.toFixed(2);
     },
 
     removeProductFromCart(state, payload) {
@@ -39,6 +40,7 @@ export default {
       state.items.splice(productInCartIndex, 1);
       state.qty -= prodData.qty;
       state.total -= prodData.price * prodData.qty;
+      state.total = +state.total.toFixed(2);
     },
   },
   actions: {
